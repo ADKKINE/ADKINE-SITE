@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title id="pageTitle">ADKINE — Ad's Portfolio · Vision. Motion. Impact.</title>
+<meta name="description" id="metaDesc" content="ADKINE — Cinematic video and motion design by Ad. Commercial brands, small businesses, After Effects motionist. BlinkStudio Academy.">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<!-- Custom Cursor -->
+<div class="cur" id="cur"></div>
+<div class="cur-ring" id="curRing"></div>
+
+<!-- ── VIDEO MODAL ── -->
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Video player">
+  <div class="modal-box">
+    <div class="modal-bar">
+      <span class="modal-title" id="modalTitle"></span>
+      <button class="modal-close" id="modalCloseBtn" aria-label="Close">✕ Close</button>
+    </div>
+    <video id="modalVid" controls playsinline preload="none"></video>
+  </div>
+</div>
+
+<!-- ── NAVIGATION ── -->
+<nav id="nav">
+  <a href="#hero" class="nav-logo" onclick="goTop();return false">ADK<span>I</span>NE</a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#services" onclick="smoothTo('services');return false">Services</a></li>
+    <li><a href="#work"     onclick="smoothTo('work');return false">Work</a></li>
+    <li><a href="#about"    onclick="smoothTo('about');return false">About</a></li>
+    <li><a href="#process"  onclick="smoothTo('process');return false">Process</a></li>
+    <li><a href="#contact"  onclick="smoothTo('contact');return false">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta" onclick="smoothTo('contact');return false">Start a Project</a>
+  <button class="nav-toggle" id="navToggle" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ── HERO ── -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <img class="hero-portrait" id="heroPortrait" src="assets/images/portrait.jpg" alt="" aria-hidden="true">
+  <div class="hero-vignette"></div>
+  <div class="hero-content">
+    <span class="hero-eyebrow" id="heroEyebrow">Cinematic Video &amp; Motion Design</span>
+    <h1 class="hero-title">
+      <span id="heroTitleMain">ADKINE</span>
+      <span class="hero-sub" id="heroTitleSub">by Ad</span>
+    </h1>
+    <div class="hero-tagline">
+      <span id="heroTag1">Vision</span>
+      <div class="tagline-dot"></div>
+      <span id="heroTag2">Motion</span>
+      <div class="tagline-dot"></div>
+      <span id="heroTag3">Impact</span>
+    </div>
+    <div class="hero-btns">
+      <a class="btn-primary" id="heroBtnPrimary" href="#work" onclick="smoothTo('work');return false">View Work</a>
+      <a class="btn-ghost" id="heroBtnGhost" href="#contact" onclick="smoothTo('contact');return false">Get in Touch</a>
+    </div>
+  </div>
+  <div class="scroll-hint" aria-hidden="true">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ── SERVICES ── -->
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow" id="servicesEyebrow">What We Create</span>
+      <h2 class="sec-title" id="servicesTitle">Two disciplines.<br>One vision.</h2>
+      <div class="hairline"></div>
+    </div>
+    <div class="svc-grid" id="svcGrid"></div>
+  </div>
+</section>
+
+<!-- ── WORK ── -->
+<section id="work">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow" id="workEyebrow">Selected Work</span>
+      <h2 class="sec-title" id="workTitle">The portfolio.</h2>
+      <div class="hairline"></div>
+    </div>
+    <p class="body-t work-intro reveal" id="workIntro">A curated selection of cinematic and motion work — each project built from one conviction: the space between stillness and motion is where stories live. Click any piece to watch.</p>
+    <div class="work-grid" id="workGrid"></div>
+  </div>
+</section>
+
+<!-- ── ABOUT ── -->
+<section id="about" class="about-section">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="portrait-wrap reveal">
+        <img class="portrait-img" id="aboutPortrait" src="assets/images/portrait.jpg" alt="Ad — Motionist and Cinematographer">
+        <div class="portrait-tag"><span id="aboutPortraitTag">Ad · Motionist</span></div>
+      </div>
+      <div class="about-text">
+        <span class="eyebrow reveal" id="aboutEyebrow">The Person Behind the Frame</span>
+        <h2 class="about-h reveal" id="aboutHeading">
+          I don't just shoot.<br>
+          <em>I craft the entire<br>visual experience.</em>
+        </h2>
+        <div class="about-body reveal" id="aboutBody"></div>
+        <div class="stats-row reveal" id="statsRow"></div>
+        <a class="btn-primary reveal" id="aboutBtn" href="#contact" onclick="smoothTo('contact');return false">Work Together</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PROCESS ── -->
+<section id="process">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow" id="processEyebrow">How We Work</span>
+      <h2 class="sec-title" id="processTitle">The process.</h2>
+      <div class="hairline"></div>
+    </div>
+    <div class="proc-grid" id="procGrid"></div>
+  </div>
+</section>
+
+<!-- ── CONTACT ── -->
+<section id="contact" class="contact-section">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div class="contact-left">
+        <span class="eyebrow reveal" id="contactEyebrow">Start a Conversation</span>
+        <h2 class="contact-h reveal" id="contactHeading">Let's make something<br><em>worth watching.</em></h2>
+        <p class="body-t reveal" id="contactIntro">Whether you're a commercial brand with a clear vision or a small business that needs one — ADKINE takes your idea from concept to screen.</p>
+        <div class="info-list reveal">
+          <div class="info-item">
+            <span class="info-lbl">Email</span>
+            <a class="info-val" id="contactEmail" href="mailto:Adratzabi@gmail.com">Adratzabi@gmail.com</a>
+          </div>
+          <div class="info-item">
+            <span class="info-lbl">Instagram</span>
+            <a class="info-val" id="contactInstagram" href="https://www.instagram.com/ad_ratzabi" target="_blank" rel="noopener">@ad_ratzabi</a>
+          </div>
+          <div class="info-item">
+            <span class="info-lbl">Response Time</span>
+            <span class="info-val" id="contactResponse">Within 24 hours</span>
+          </div>
+          <div class="info-item">
+            <span class="info-lbl">Academy</span>
+            <span class="info-val" id="contactAcademy">BlinkStudio</span>
+          </div>
+        </div>
+      </div>
+      <form class="cform reveal" id="contactForm" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="contact">
+        <p style="display:none"><label>Don't fill this: <input name="bot-field"></label></p>
+        <div class="fg-row">
+          <div class="fg">
+            <label for="fn">First Name</label>
+            <input id="fn" name="firstName" type="text" placeholder="Your name" autocomplete="given-name">
+          </div>
+          <div class="fg">
+            <label for="co">Company</label>
+            <input id="co" name="company" type="text" placeholder="Brand / Business" autocomplete="organization">
+          </div>
+        </div>
+        <div class="fg">
+          <label for="em">Email</label>
+          <input id="em" name="email" type="email" placeholder="your@email.com" autocomplete="email">
+        </div>
+        <div class="fg">
+          <label for="sv">What do you need?</label>
+          <select id="sv" name="service">
+            <option value="" disabled selected>Select a service</option>
+            <option>Cinematic Video</option>
+            <option>Motion Design</option>
+            <option>Both — Video + Motion</option>
+            <option>Not sure yet — let's talk</option>
+          </select>
+        </div>
+        <div class="fg">
+          <label for="msg">Tell me about the project</label>
+          <textarea id="msg" name="message" placeholder="What are you making? Who is it for? What should people feel?"></textarea>
+        </div>
+        <button type="submit" class="btn-primary">Send Message</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="wrap foot-inner">
+    <span class="foot-logo">ADK<span>I</span>NE</span>
+    <span class="foot-copy" id="footCopy">© 2025 ADKINE by Ad · Vision. Motion. Impact.</span>
+    <div class="foot-links">
+      <a id="footInstagram" href="https://www.instagram.com/ad_ratzabi" target="_blank" rel="noopener">Instagram</a>
+      <a id="footEmail" href="mailto:Adratzabi@gmail.com">Email</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ════ CONTENT LOADER — fills the page from data files, then design/animations run ════ -->
+<script>
+(async function(){
+  const j = async p => (await fetch(p + '?v=' + Date.now())).json();
+  const list = async (folder, files) => {
+    const items = await Promise.all(files.map(f => j(folder+'/'+f).catch(()=>null)));
+    return items.filter(Boolean).sort((a,b)=>(a.order||0)-(b.order||0));
+  };
+  const set = (id, html) => { const el = document.getElementById(id); if(el) el.innerHTML = html; };
+  const setText = (id, t) => { const el = document.getElementById(id); if(el) el.textContent = t; };
+
+  try {
+    // ── HERO + META ──
+    const h = await j('data/hero.json');
+    setText('pageTitle', h.metaTitle);
+    document.getElementById('metaDesc').setAttribute('content', h.metaDesc||'');
+    set('heroEyebrow', h.eyebrow);
+    setText('heroTitleMain', h.titleMain);
+    setText('heroTitleSub', h.titleSub);
+    setText('heroTag1', h.tag1); setText('heroTag2', h.tag2); setText('heroTag3', h.tag3);
+    setText('heroBtnPrimary', h.btnPrimary);
+    setText('heroBtnGhost', h.btnGhost);
+
+    // ── SECTION HEADERS ──
+    const s = await j('data/sections.json');
+    set('servicesEyebrow', s.servicesEyebrow); set('servicesTitle', s.servicesTitle);
+    set('workEyebrow', s.workEyebrow); set('workTitle', s.workTitle); set('workIntro', s.workIntro);
+    set('aboutEyebrow', s.aboutEyebrow); set('aboutHeading', s.aboutHeading);
+    set('processEyebrow', s.processEyebrow); set('processTitle', s.processTitle);
+
+    // ── SERVICES ──
+    const svc = await list('data/services', ['1-cinematic-video.json','2-motion-design.json']);
+    set('svcGrid', svc.map((c,i)=>`
+      <div class="svc-card reveal d${i+1}">
+        <span class="svc-num">${c.num}</span>
+        <h3 class="svc-title">${c.title}</h3>
+        <p class="svc-desc">${c.desc}</p>
+        <div class="tags">${(c.tags||[]).map(t=>`<span class="tag">${t}</span>`).join('')}</div>
+      </div>`).join(''));
+
+    // ── WORK ──
+    const work = await list('data/work', ['1-frames-of-stillness.json','2-composition-study.json','3-the-ritual.json','4-dark-brew.json','5-exposure.json','6-end-of-hair.json']);
+    set('workGrid', work.map((w,i)=>{
+      const feat = w.featured ? ' feat' : '';
+      const d = 'd' + ((i%3)+1);
+      const playAttr = w.video ? `onclick="playVideo('${w.video}','${(w.title||'').replace(/'/g,"\\'")}')"` : '';
+      return `<div class="work-item${feat} reveal ${d}" ${playAttr} role="button" tabindex="0" aria-label="Play: ${w.title}">
+        <img class="w-thumb" src="${w.thumb}" alt="${w.alt||w.title}">
+        <div class="play-ring"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+        <span class="vid-badge">${w.badge||'▶ Video'}</span>
+        <div class="w-ov">
+          <span class="ov-cat">${w.category}</span>
+          <span class="ov-title">${w.title}</span>
+          <span class="ov-info">${w.info}</span>
+        </div>
+      </div>`;
+    }).join(''));
+
+    // ── ABOUT ──
+    const a = await j('data/about.json');
+    document.getElementById('aboutPortraitTag').textContent = a.portraitTag;
+    set('aboutBody', `<p>${a.para1}</p><p>${a.para2}</p><p>${a.para3}</p>`);
+    set('statsRow', `
+      <div class="stat"><span class="stat-n">${a.stat1n}</span><span class="stat-l">${a.stat1l}</span></div>
+      <div class="stat"><span class="stat-n">${a.stat2n}</span><span class="stat-l">${a.stat2l}</span></div>
+      <div class="stat"><span class="stat-n">${a.stat3n}</span><span class="stat-l">${a.stat3l}</span></div>`);
+    setText('aboutBtn', a.aboutBtn);
+
+    // ── PROCESS ──
+    const proc = await list('data/process', ['1-discovery.json','2-concept.json','3-production.json','4-delivery.json']);
+    set('procGrid', proc.map((p,i)=>`
+      <div class="proc-card reveal d${i+1}">
+        <div class="step-ico">${p.icon||''}</div>
+        <h3 class="proc-title">${p.title}</h3>
+        <p class="proc-desc">${p.desc}</p>
+      </div>`).join(''));
+
+    // ── CONTACT ──
+    const c = await j('data/contact.json');
+    set('contactEyebrow', c.eyebrow);
+    set('contactHeading', c.heading);
+    set('contactIntro', c.intro);
+    const em = document.getElementById('contactEmail'); em.textContent = c.email; em.href = 'mailto:'+c.email;
+    const ig = document.getElementById('contactInstagram'); ig.textContent = c.instagram; ig.href = c.instagramUrl;
+    setText('contactResponse', c.responseTime);
+    setText('contactAcademy', c.academy);
+    set('footCopy', c.footerCopy);
+    document.getElementById('footInstagram').href = c.instagramUrl;
+    document.getElementById('footEmail').href = 'mailto:'+c.email;
+  } catch(e){ console.error('Content load error:', e); }
+
+  // ── Now that content is in place, load the design's animations ──
+  const tag = document.createElement('script');
+  tag.src = 'assets/main.js';
+  document.body.appendChild(tag);
+})();
+</script>
+</body>
+</html>
