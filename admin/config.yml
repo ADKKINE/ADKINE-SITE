@@ -1,0 +1,122 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "assets/images"
+public_folder: "assets/images"
+
+# A second media folder concept isn't supported; videos go through the same uploader.
+# For large video files, paste a path or upload via GitHub instead (see guide).
+
+collections:
+  # ════ VIDEOS / WORK ════
+  - name: "work"
+    label: "🎬 Videos / Work"
+    label_singular: "video"
+    folder: "data/work"
+    create: true
+    slug: "{{order}}-{{slug}}"
+    summary: "{{order}} · {{title}}"
+    sortable_fields: ['order', 'title']
+    fields:
+      - { name: order, label: "Order (1 = shows first)", widget: number, value_type: int, default: 1 }
+      - { name: featured, label: "Featured (large tile)?", widget: boolean, default: false }
+      - { name: title, label: "Title", widget: string }
+      - { name: category, label: "Category line", widget: string, hint: "e.g. Commercial · Lifestyle" }
+      - { name: info, label: "Info line", widget: string, hint: "e.g. 4K · 38s · Brand film" }
+      - { name: badge, label: "Badge", widget: string, default: "▶ Video" }
+      - { name: thumb, label: "Cover image (upload)", widget: image }
+      - { name: video, label: "Video file path", widget: string, required: false, hint: "e.g. assets/videos/tea.mp4 — upload big video files via GitHub (see guide). Leave blank for no video." }
+      - { name: alt, label: "Image description (for accessibility)", widget: string, required: false }
+
+  # ════ SERVICES ════
+  - name: "services"
+    label: "🛠 Services"
+    label_singular: "service"
+    folder: "data/services"
+    create: true
+    slug: "{{order}}-{{slug}}"
+    summary: "{{num}} · {{title}}"
+    fields:
+      - { name: order, label: "Order", widget: number, value_type: int, default: 1 }
+      - { name: num, label: "Roman numeral (I, II...)", widget: string }
+      - { name: title, label: "Service name", widget: string }
+      - { name: desc, label: "Description", widget: text }
+      - { name: tags, label: "Tags", widget: list }
+
+  # ════ PROCESS ════
+  - name: "process"
+    label: "📋 Process steps"
+    label_singular: "step"
+    folder: "data/process"
+    create: true
+    slug: "{{order}}-{{slug}}"
+    summary: "{{order}} · {{title}}"
+    fields:
+      - { name: order, label: "Order", widget: number, value_type: int, default: 1 }
+      - { name: title, label: "Step title", widget: string }
+      - { name: desc, label: "Description", widget: text }
+      - { name: icon, label: "Icon SVG code (advanced — leave as-is)", widget: text, required: false }
+
+  # ════ SINGLE-PAGE SECTIONS ════
+  - name: "pages"
+    label: "📄 Page sections"
+    files:
+      - name: "hero"
+        label: "1 · Hero (top)"
+        file: "data/hero.json"
+        fields:
+          - { name: eyebrow, label: "Small line above title", widget: string }
+          - { name: titleMain, label: "Big title", widget: string }
+          - { name: titleSub, label: "Title subtext (e.g. 'by Ad')", widget: string }
+          - { name: tag1, label: "Word 1", widget: string }
+          - { name: tag2, label: "Word 2", widget: string }
+          - { name: tag3, label: "Word 3", widget: string }
+          - { name: btnPrimary, label: "Main button text", widget: string }
+          - { name: btnGhost, label: "Second button text", widget: string }
+          - { name: metaTitle, label: "Browser tab title (SEO)", widget: string }
+          - { name: metaDesc, label: "Google description (SEO)", widget: text }
+
+      - name: "sections"
+        label: "Section headings"
+        file: "data/sections.json"
+        fields:
+          - { name: servicesEyebrow, label: "Services — small label", widget: string }
+          - { name: servicesTitle, label: "Services — title (use <br> for line break)", widget: string }
+          - { name: workEyebrow, label: "Work — small label", widget: string }
+          - { name: workTitle, label: "Work — title", widget: string }
+          - { name: workIntro, label: "Work — intro paragraph", widget: text }
+          - { name: aboutEyebrow, label: "About — small label", widget: string }
+          - { name: aboutHeading, label: "About — heading (HTML allowed)", widget: text }
+          - { name: processEyebrow, label: "Process — small label", widget: string }
+          - { name: processTitle, label: "Process — title", widget: string }
+
+      - name: "about"
+        label: "4 · About section"
+        file: "data/about.json"
+        fields:
+          - { name: portraitTag, label: "Label on photo", widget: string }
+          - { name: para1, label: "Paragraph 1", widget: text }
+          - { name: para2, label: "Paragraph 2 (HTML allowed)", widget: text }
+          - { name: para3, label: "Paragraph 3 (HTML allowed)", widget: text }
+          - { name: stat1n, label: "Stat 1 number", widget: string }
+          - { name: stat1l, label: "Stat 1 label", widget: string }
+          - { name: stat2n, label: "Stat 2 number", widget: string }
+          - { name: stat2l, label: "Stat 2 label", widget: string }
+          - { name: stat3n, label: "Stat 3 number", widget: string }
+          - { name: stat3l, label: "Stat 3 label", widget: string }
+          - { name: aboutBtn, label: "Button text", widget: string }
+
+      - name: "contact"
+        label: "6 · Contact section"
+        file: "data/contact.json"
+        fields:
+          - { name: eyebrow, label: "Small label", widget: string }
+          - { name: heading, label: "Heading (HTML allowed)", widget: text }
+          - { name: intro, label: "Intro paragraph", widget: text }
+          - { name: email, label: "Email", widget: string }
+          - { name: instagram, label: "Instagram handle (shown)", widget: string }
+          - { name: instagramUrl, label: "Instagram link", widget: string }
+          - { name: responseTime, label: "Response time", widget: string }
+          - { name: academy, label: "Academy", widget: string }
+          - { name: footerCopy, label: "Footer copyright text", widget: string }
